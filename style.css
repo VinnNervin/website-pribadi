@@ -3,13 +3,7 @@
 /* SETTING */
 :root {
     font-size: 12px;
-    --white: #ffffff;  
-    --blue1: #cbf3f0;  
-    --blue2: #2ec4b6;  
-    --skin: #ffbf69; 
-    --orange: #ff9f1c;
 }
-
 
 html {
     scroll-behavior: smooth;
@@ -26,7 +20,7 @@ html {
 }
 
 
-
+/* HEADER MENU */
 header {
     position: absolute;
     width: 100%;
@@ -63,25 +57,32 @@ header .nav-sosial li {
 
 header a {
     text-decoration: none;
-    color: black;
+    color: #363062;
     font-weight: bold;
     font-size: 1.3rem;
 }
 
-header a:focus, a:hover {
+header .nav-sosial a:focus, .nav-sosial a:hover {
     text-decoration: underline;
     transition: all .3s ease-in-out;
     color: #393ec0;
 }
 
 header .logo {
-    background-color: #7131d2;
+    background-color: #4b3bc6;
+    color: wheat;
+    border-radius: 10px;
     padding: 8.5px;
     font-size: 1.5rem;
     font-weight: bold;
 }
 
+header .logo a {
+    color: white;
+}
 
+
+/* PROFILE MENU  */
 .container-profile {
     height: 100vh;
     display: flex;
@@ -116,60 +117,80 @@ header .logo {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: clamp(60%, 90vh, 100%);
+    height: 90%;
     width: 50%;
     border-radius: 0 30% 0 30%;
 }
 
 
-
-
-
-
+/* BOX CARD  */
 .box-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: white;
-    border-radius: 20px;
-    padding: 20px 0;
-    width: 95%;
-    margin: 10vw auto;
+    margin: 100px auto;
+    width: 70%;
+    padding: 20px;
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.179);
     background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
 }
 
-
-.box-info h1 {
+.box-info p {
     font-size: clamp(1rem, 5vw, 5rem);
     color: #393ec0;
-    z-index: 2;
+    font-weight: 600;
+    text-align: center;
 }
 
 .box-info .card-box {
-    padding: 25px 0 50px 0;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    z-index: 1;
     overflow-x: scroll;
-    /* background-color: blue; */
+    overflow-y: hidden;
+    white-space: nowrap;
+    display: flex;
 }
 
-.card-box::-Webkit-Scrollbar {
-    Width: 0px;
-    Background: Transparent; /* Make Scrollbar Transparent */
+.box-info .card-box::-webkit-scrollbar {
+    background-color: transparent;
 }
 
-.card-box img {
-    margin-right: 10px;  
-    max-width: 200px;
-    width: Clamp(30%, 100vw, 200px);
-    margin: 0 10px;
+.box-info .card-box div {
+    background-color: red;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    width: 100px;
+    height: 100px;
 }
 
-.card-box img:hover {
-    transform: scale(1.1);
-    transition: all .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+.box-info .card-box div img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
+
+.card-box .pics p {
+    display: inline-block;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.129);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #290dfb;
+    width: 50%;
+    margin: auto;
+    border-radius: 40px;
+    /* transform: translateY(-100px); */
+    backdrop-filter: blur(10px);
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.369);
+
+}
+
+.box-info .card-box div img:hover ~ p {
+    transform: translateY(-100px);
+    border-radius: 0;
+    width: 80%;
+    /* backdrop-filter: blur(10px);  */
+    transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1) .5s, width .5s .6s;
+}
+
+
+
